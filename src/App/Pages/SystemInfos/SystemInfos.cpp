@@ -133,7 +133,7 @@ void SystemInfos::onEvent(lv_event_t* event)
 	{
 		if (lv_obj_has_state(obj, LV_STATE_FOCUSED))
 		{
-			instance->Manager->Push("Pages/Scene3D");
+			// instance->Manager->Push("Pages/Scene3D");
 		}
 	}
 

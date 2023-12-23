@@ -92,7 +92,7 @@ void Template::onEvent(lv_event_t* event)
 
 	if (code == LV_EVENT_PRESSED)
 	{
-		if (lv_obj_has_state(obj, LV_STATE_FOCUSED))
+		// if (lv_obj_has_state(obj, LV_STATE_FOCUSED))
 		{
 			instance->Manager->Push("Pages/SystemInfos");
 		}

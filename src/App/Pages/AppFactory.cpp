@@ -25,6 +25,7 @@
 #include "SystemInfos/SystemInfos.h"
 #include "StartUp/StartUp.h"
 #include "Scene3D/Scene3D.h"
+#include "StopWatch/StopWatch.h"
 
 #define APP_CLASS_MATCH(className)\
 do{\
@@ -36,10 +37,10 @@ do{\
 
 PageBase* AppFactory::CreatePage(const char* name)
 {
-    APP_CLASS_MATCH(Template);
+    // APP_CLASS_MATCH(Template);
     APP_CLASS_MATCH(SystemInfos);
     APP_CLASS_MATCH(Startup);
-    APP_CLASS_MATCH(Scene3D);
-
+    // APP_CLASS_MATCH(Scene3D);
+    APP_CLASS_MATCH(StopWatch);
     return nullptr;
 }
