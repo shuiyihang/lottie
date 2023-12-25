@@ -61,7 +61,6 @@ void StopWatch::AttachEvent(lv_obj_t* obj)
 void StopWatch::onBtnClicked(lv_obj_t* btn)
 {
     if(btn == View.ui.bottomInfo.ctl_btn){
-        Serial.printf("btn1 \r\n");
         // 开始或暂停计数
         if(isStart == false){
             // 开始计数
@@ -75,13 +74,11 @@ void StopWatch::onBtnClicked(lv_obj_t* btn)
             isStart = false;
         }
     }else if(btn == View.ui.bottomInfo.reset_btn){
-        Serial.printf("btn2 \r\n");
+        // Serial.printf("btn2 \r\n");
         if (isStart == false) {
             time = 0;
             lv_label_set_text(View.ui.topInfo.label, "00:00.00");
         }
-    }else{
-        Serial.printf("not known \r\n");
     }
 }
 
@@ -91,10 +88,11 @@ void StopWatch::onEvent(lv_event_t* event)
     lv_obj_t* obj = lv_event_get_current_target(event);
     lv_event_code_t code = lv_event_get_code(event);
     
-    Serial.printf("code:%d\r\n",code);
+    // Serial.printf("code:%d\r\n",code);
     if(code == LV_EVENT_PRESSED){
         instance->onBtnClicked(obj);
     }
+    
 }
 
 void StopWatch::onTimerUpdate(lv_timer_t* timer)

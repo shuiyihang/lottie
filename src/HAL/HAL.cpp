@@ -28,6 +28,8 @@ void HAL::Init()
     HAL::I2C_Init(true);
     HAL::IMU_Init();
 
+    HAL::Touch_Init();
+
     HAL::Audio_PlayMusic("Startup");
 }
 
@@ -40,3 +42,4 @@ void HAL::Update()
     // HAL::BT_Update();
     __IntervalExecute(HAL::SD_Update(), 500);
 }
+// xtensa-esp32-elf-addr2line -pfiaC -e firmware.elf ADDRESS 0x400fa647:0x3ffd9320

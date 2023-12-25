@@ -27,11 +27,16 @@
 static void encoder_init(void);
 static void encoder_read(lv_indev_drv_t* indev_drv, lv_indev_data_t* data);
 
+static void touchpad_read(lv_indev_drv_t * indev_drv, lv_indev_data_t * data);
+
 /**********************
  *  STATIC VARIABLES
  **********************/
 
 static lv_indev_t* encoder_indev;
+
+static TouchPoint_t coordinate;
+static lv_indev_t* indev_touchpad;
 
 /**********************
  *      MACROS
@@ -41,9 +46,17 @@ static lv_indev_t* encoder_indev;
  *   GLOBAL FUNCTIONS
  **********************/
 static lv_indev_drv_t indev_drv;
+static lv_indev_drv_t indev_drv_Touchpad;
 
 void lv_port_indev_init(void)
 {
+
+
+    /*Register a touchpad input device*/
+    lv_indev_drv_init(&indev_drv_Touchpad);
+    indev_drv_Touchpad.type = LV_INDEV_TYPE_POINTER;
+    indev_drv_Touchpad.read_cb = touchpad_read;
+    indev_touchpad = lv_indev_drv_register(&indev_drv_Touchpad);
 
     /*------------------
      * Encoder
@@ -68,6 +81,37 @@ void lv_port_indev_init(void)
 /**********************
  *   STATIC FUNCTIONS
  **********************/
+
+/*Will be called by the library to read the touchpad*/
+static void touchpad_read(lv_indev_drv_t * indev_drv, lv_indev_data_t * data)
+{
+    // static lv_coord_t last_x = 0;
+    // static lv_coord_t last_y = 0;
+
+    // /*Save the pressed coordinates and the state*/
+    // if(touchpad_is_pressed()) {
+    //     touchpad_get_xy(&last_x, &last_y);
+    //     data->state = LV_INDEV_STATE_PR;
+    // } else {
+    //     data->state = LV_INDEV_STATE_REL;
+    // }
+
+    // /*Set the last pressed coordinates*/
+    // data->point.x = last_x;
+    // data->point.y = last_y;
+
+
+    /* Read touch point */
+    HAL::Touch_GetPressPoint(&coordinate);
+    // Serial.printf("x:%d, y:%d \r\n", coordinate.x, coordinate.y);
+    if (coordinate.x == -1) {
+        data->state = LV_INDEV_STATE_REL;
+    } else {
+        data->point.x = coordinate.x;
+        data->point.y = coordinate.y;
+        data->state = LV_INDEV_STATE_PR;
+    }
+}
 
 /*------------------
  * Encoder

@@ -27,7 +27,8 @@ void SystemInfosModel::GetIMUInfo(
 )
 {
     HAL::IMU_Info_t imu;
-    account->Pull("IMU", &imu, sizeof(imu));
+    int ret = account->Pull("IMU", &imu, sizeof(imu));
+    if(ret == 0)
     snprintf(
         info,
         len,
@@ -38,9 +39,9 @@ void SystemInfosModel::GetIMUInfo(
         imu.gx,
         imu.gy,
         imu.gz,
-        imu.mx,
-        imu.my,
-        imu.mz
+        imu.roll,
+        imu.yaw,
+        imu.pitch
     );
 }
 

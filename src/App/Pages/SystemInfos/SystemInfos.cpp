@@ -22,8 +22,8 @@ void SystemInfos::onViewLoad()
 	Model.Init();
 	View.Create(root);
 	AttachEvent(root);
-	AttachEvent(View.ui.joints.icon);
-	AttachEvent(View.ui.pose6d.icon);
+	// AttachEvent(View.ui.joints.icon);
+	// AttachEvent(View.ui.pose6d.icon);
 	AttachEvent(View.ui.system.icon);
 	AttachEvent(View.ui.imu.icon);
 	AttachEvent(View.ui.battery.icon);
@@ -78,13 +78,13 @@ void SystemInfos::Update()
 {
 	char buf[64];
 
-	/* Joints */
-	Model.GetJointsInfo(buf, sizeof(buf));
-	View.SetJoints(buf);
+	// /* Joints */
+	// Model.GetJointsInfo(buf, sizeof(buf));
+	// View.SetJoints(buf);
 
 	/* Pose6D */
-	Model.GetPose6DInfo(buf, sizeof(buf));
-	View.SetPose6D(buf);
+	// Model.GetPose6DInfo(buf, sizeof(buf));
+	// View.SetPose6D(buf);
 
 	/* IMU */
 	Model.GetIMUInfo(buf, sizeof(buf));
@@ -110,7 +110,7 @@ void SystemInfos::Update()
 		VERSION_FIRMWARE_NAME " " VERSION_SOFTWARE,
 		VERSION_AUTHOR_NAME,
 		VERSION_LVGL,
-		"dummy time",
+		"magic girl",
 		VERSION_COMPILER,
 		VERSION_BUILD_TIME
 	);
@@ -133,7 +133,7 @@ void SystemInfos::onEvent(lv_event_t* event)
 	{
 		if (lv_obj_has_state(obj, LV_STATE_FOCUSED))
 		{
-			// instance->Manager->Push("Pages/Scene3D");
+			// instance->Manager->Push("Pages/StopWatch");
 		}
 	}
 

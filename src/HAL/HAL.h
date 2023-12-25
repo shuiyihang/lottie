@@ -6,7 +6,9 @@
 #include "HAL_Def.h"
 #include "App/Configs/Config.h"
 #include "CommonMacro.h"
-#include "FreeRTOS.h"
+#include "FreeRTOS/FreeRTOS.h"
+// #include "FreeRTOS.h"
+#include "M5Touch.h"
 
 namespace HAL
 {
@@ -71,6 +73,11 @@ namespace HAL
 /* Bluetooth */
     bool BT_Init();
     void BT_Update();
+
+    /* Touch screen */
+    void Touch_Init();
+    bool Touch_Ispressed();
+    void Touch_GetPressPoint(TouchPoint_t* coordinate);
 
 }
 

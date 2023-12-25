@@ -96,6 +96,7 @@ void StopWatchView::Create(lv_obj_t *root)
     ui.group = lv_group_create();
     lv_group_add_obj(ui.group, ui.bottomInfo.ctl_btn);
     lv_group_add_obj(ui.group, ui.bottomInfo.reset_btn);
+    lv_group_add_obj(ui.group,ui.topInfo.label);
     lv_indev_set_group(lv_get_indev(LV_INDEV_TYPE_ENCODER), ui.group);
 
 }

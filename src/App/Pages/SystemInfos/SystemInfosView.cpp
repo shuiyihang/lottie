@@ -23,35 +23,6 @@ void SystemInfosView::Create(lv_obj_t* root)
 
 	Style_Init();
 
-	/* Item Joints */
-	Item_Create(
-		&ui.joints,
-		root,
-		"Joints",
-		"joints",
-
-		"J1\n"
-		"J2\n"
-		"J3\n"
-		"J4\n"
-		"J5\n"
-		"J6\n"
-	);
-
-	Item_Create(
-		&ui.pose6d,
-		root,
-		"Pose6D",
-		"pose6d",
-
-		"X\n"
-		"Y\n"
-		"Z\n"
-		"A\n"
-		"B\n"
-		"C\n"
-	);
-
 	/* Item System */
 	Item_Create(
 		&ui.system,
@@ -81,9 +52,9 @@ void SystemInfosView::Create(lv_obj_t* root)
 		"Gx\n"
 		"Gy\n"
 		"Gz\n"
-		"Mx\n"
-		"My\n"
-		"Mz"
+		"roll\n"
+		"yaw\n"
+		"pitch"
 	);
 
 	/* Item Battery */
@@ -120,14 +91,12 @@ void SystemInfosView::Group_Init()
 	lv_group_set_focus_cb(ui.group, onFocus);
 	lv_indev_set_group(lv_get_indev(LV_INDEV_TYPE_ENCODER), ui.group);
 
-	lv_group_add_obj(ui.group, ui.joints.icon);
-	lv_group_add_obj(ui.group, ui.pose6d.icon);
 	lv_group_add_obj(ui.group, ui.system.icon);
 	lv_group_add_obj(ui.group, ui.imu.icon);
 	lv_group_add_obj(ui.group, ui.battery.icon);
 	lv_group_add_obj(ui.group, ui.storage.icon);
 
-	lv_group_focus_obj(ui.pose6d.icon);
+	lv_group_focus_obj(ui.imu.icon);
 }
 
 void SystemInfosView::Delete()
