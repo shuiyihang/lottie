@@ -284,11 +284,13 @@ void StatusBar::SetStyle(Style_t style)
     lv_obj_t* cont = ui.cont;
     if (style == STYLE_TRANSP)
     {
+        lv_obj_add_flag(cont, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_state(cont, LV_STATE_DEFAULT);
         lv_obj_clear_state(cont, LV_STATE_USER_1);
     }
     else if (style == STYLE_BLACK)
     {
+        lv_obj_clear_flag(cont, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_state(cont, LV_STATE_USER_1);
     }
     else

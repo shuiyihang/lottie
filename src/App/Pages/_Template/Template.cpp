@@ -20,7 +20,6 @@ void Template::onCustomAttrConfig()
 void Template::onViewLoad()
 {
 	View.Create(root);
-	lv_label_set_text(View.ui.labelTitle, Name);
 
 	AttachEvent(root);
 	AttachEvent(View.ui.canvas);
@@ -41,7 +40,8 @@ void Template::onViewWillAppear()
 
 	PAGE_STASH_POP(param);
 
-	lv_obj_set_style_bg_color(root, param.color, LV_PART_MAIN);
+	// lv_obj_set_style_bg_color(root, param.color, LV_PART_MAIN);
+	StatusBar::SetStyle(StatusBar::STYLE_TRANSP);
 
 	timer = lv_timer_create(onTimerUpdate, param.time, this);
 }
@@ -74,7 +74,7 @@ void Template::AttachEvent(lv_obj_t* obj)
 
 void Template::Update()
 {
-	lv_label_set_text_fmt(View.ui.labelTick, "tick = %d save = %d", Model.GetData(), Model.TickSave);
+	
 }
 
 void Template::onTimerUpdate(lv_timer_t* timer)
@@ -94,7 +94,7 @@ void Template::onEvent(lv_event_t* event)
 	{
 		// if (lv_obj_has_state(obj, LV_STATE_FOCUSED))
 		{
-			instance->Manager->Push("Pages/SystemInfos");
+			instance->Manager->Pop();
 		}
 	}
 }

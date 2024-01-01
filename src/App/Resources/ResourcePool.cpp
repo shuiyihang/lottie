@@ -52,8 +52,13 @@ do{\
 
         IMPORT_IMG(girl);
         IMPORT_IMG(bluetooth);
-        IMPORT_IMG(pose6d);
-        IMPORT_IMG(joints);
+
+        IMPORT_IMG(game);
+        IMPORT_IMG(light);
+        IMPORT_IMG(pikaq);
+        IMPORT_IMG(setting);
+        IMPORT_IMG(sound);
+        IMPORT_IMG(clock);
     }
 
 } /* extern "C" */

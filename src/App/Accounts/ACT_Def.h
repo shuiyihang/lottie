@@ -84,6 +84,7 @@ typedef enum
 {
     SYSCONFIG_CMD_LOAD,
     SYSCONFIG_CMD_SAVE,
+    SYSCONFIG_CMD_SET,
 } SysConfig_Cmd_t;
 
 typedef struct

@@ -62,5 +62,5 @@ void Startup::onTimer(lv_timer_t* timer)
 {
     Startup* instance = (Startup*)timer->user_data;
 
-    instance->Manager->Push("Pages/StopWatch");
+    instance->Manager->Push("Pages/MainPage");
 }

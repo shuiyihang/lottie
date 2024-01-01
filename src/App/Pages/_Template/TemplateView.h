@@ -14,8 +14,6 @@ public:
 public:
     struct
     {
-        lv_obj_t* labelTitle;
-        lv_obj_t* labelTick;
         lv_obj_t* canvas;
         lv_group_t* group;
     } ui;

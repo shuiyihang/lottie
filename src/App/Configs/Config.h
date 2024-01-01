@@ -56,7 +56,7 @@
 /* Buzzer */
 #define CONFIG_BUZZ_PIN             25
 #define CONFIG_BUZZ_CHANNEL         2
-#define CONFIG_SOUND_ENABLE_DEFAULT false
+#define CONFIG_SOUND_ENABLE_DEFAULT true
 
 /* IMU */
 #define CONFIG_IMU_INT1_PIN         32

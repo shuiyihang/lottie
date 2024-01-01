@@ -48,7 +48,7 @@ public:
 
 public:
     ButtonEvent(
-        uint16_t longPressTime = 500,
+        uint16_t longPressTime = 300,
         uint16_t longPressTimeRepeat = 200,
         uint16_t doubleClickTime = 200
     );

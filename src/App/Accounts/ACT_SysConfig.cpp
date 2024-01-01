@@ -32,6 +32,8 @@ static int onEvent(Account* account, Account::EventParam_t* param)
             if (info->cmd == SYSCONFIG_CMD_LOAD)
             {
                 HAL::Buzz_SetEnable(sysConfig.soundEnable);
+            }else if(info->cmd == SYSCONFIG_CMD_SET){
+                HAL::Buzz_SetEnable(info->soundEnable);
             }
         }
             break;
