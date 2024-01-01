@@ -56,16 +56,16 @@ lv_obj_t* StopWatchView::Btn_Create(lv_obj_t* par,lv_coord_t x_ofs)
     lv_obj_set_style_outline_width(btn, 2,0);
 
     if (x_ofs > 0) {
-        lv_obj_set_style_bg_color(btn, lv_color_hex(0x112913), 0);
-        lv_obj_set_style_outline_color(btn, lv_color_hex(0x112913), 0);
-        lv_obj_set_style_bg_color(btn, lv_color_hex(0x081609), LV_STATE_FOCUSED);
-        lv_obj_set_style_outline_color(btn, lv_color_hex(0x081609), LV_STATE_FOCUSED);
+        lv_obj_set_style_bg_color(btn, lv_color_hex(0x112913), LV_STATE_FOCUSED);
+        lv_obj_set_style_outline_color(btn, lv_color_hex(0x112913), LV_STATE_FOCUSED);
+        lv_obj_set_style_bg_color(btn, lv_color_hex(0x081609), 0);
+        lv_obj_set_style_outline_color(btn, lv_color_hex(0x081609), 0);
     }
     else {
-        lv_obj_set_style_outline_color(btn, lv_color_hex(0x1c1c1c), 0);
-        lv_obj_set_style_bg_color(btn, lv_color_hex(0x1c1c1c), 0);
-        lv_obj_set_style_bg_color(btn, lv_color_hex(0x0f0f0f), LV_STATE_FOCUSED);
-        lv_obj_set_style_outline_color(btn, lv_color_hex(0x0f0f0f), LV_STATE_FOCUSED);
+        lv_obj_set_style_outline_color(btn, lv_color_hex(0x1c1c1c), LV_STATE_FOCUSED);
+        lv_obj_set_style_bg_color(btn, lv_color_hex(0x1c1c1c), LV_STATE_FOCUSED);
+        lv_obj_set_style_bg_color(btn, lv_color_hex(0x0f0f0f), 0);
+        lv_obj_set_style_outline_color(btn, lv_color_hex(0x0f0f0f), 0);
     }
     lv_obj_set_style_bg_opa(btn, LV_OPA_COVER, 0);
     // 设置按钮的样式，使其成为一个圆形按钮
