@@ -21,8 +21,8 @@ void Template::onViewLoad()
 {
 	View.Create(root);
 
-	AttachEvent(root);
-	AttachEvent(View.ui.canvas);
+	// AttachEvent(root);
+	// AttachEvent(View.ui.canvas);
 
 	Model.TickSave = Model.GetData();
 }
@@ -94,7 +94,7 @@ void Template::onEvent(lv_event_t* event)
 	{
 		// if (lv_obj_has_state(obj, LV_STATE_FOCUSED))
 		{
-			instance->Manager->Pop();
+			// instance->Manager->Pop();
 		}
 	}
 }

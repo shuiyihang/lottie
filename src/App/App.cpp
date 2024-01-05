@@ -47,7 +47,7 @@ void App_Init()
     manager.Install("MainPage", "Pages/MainPage");
 
     manager.SetGlobalLoadAnimType(PageManager::LOAD_ANIM_OVER_TOP, 500);
-    manager.Push("Pages/Startup");
+    manager.Push("Pages/Template");
 
     ACCOUNT_SEND_NOTIFY_CMD(Storage, STORAGE_CMD_LOAD);
     ACCOUNT_SEND_NOTIFY_CMD(SysConfig, SYSCONFIG_CMD_LOAD);

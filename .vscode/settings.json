@@ -12,6 +12,7 @@
         "string_view": "cpp",
         "lv_disp.h": "c",
         "*.tcc": "cpp",
-        "*.inc": "cpp"
+        "*.inc": "cpp",
+        "rlottie_capi.h": "c"
     }
 }

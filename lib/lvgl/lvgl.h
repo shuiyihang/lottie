@@ -59,6 +59,9 @@ extern "C" {
 #include "src/widgets/lv_canvas.h"
 #include "src/widgets/lv_switch.h"
 
+#include "src/extra/libs/rlottie/lv_rlottie.h"
+
+
 #include "src/draw/lv_draw.h"
 
 #include "src/lv_api_map.h"
